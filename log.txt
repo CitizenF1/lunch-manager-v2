@@ -1,0 +1,68 @@
+2022/09/09 21:35:57 712199839 telebot: context pre checkout query is nil
+2022/09/09 21:37:02 712199841 telebot: context pre checkout query is nil
+2022/09/09 21:43:13 712199843 telebot: context pre checkout query is nil
+2022/09/09 21:43:15 712199844 telebot: context pre checkout query is nil
+2022/09/09 21:45:59 712199845 telebot: context pre checkout query is nil
+2022/09/09 21:46:30 712199847 telebot: context pre checkout query is nil
+2022/09/09 21:46:46 712199850 telebot: context pre checkout query is nil
+2022/09/09 21:46:48 712199851 telebot: context pre checkout query is nil
+2022/09/09 21:48:10 712199852 telebot: context pre checkout query is nil
+2022/09/09 21:48:54 712199854 telebot: context pre checkout query is nil
+2022/09/09 22:25:43 712199867 telebot: context does not contain message
+2022/09/09 22:25:52 712199869 telebot: context does not contain message
+2022/09/09 22:28:21 712199873 telebot: context does not contain message
+2022/09/09 22:30:45 712199882 telebot: context callback is nil
+2022/09/09 22:35:30 712199889 telebot: context callback is nil
+2022/09/09 22:41:36 712199896 telegram: Bad Request: message text is empty (400)
+2022/09/09 22:41:55 712199899 telegram: Bad Request: message text is empty (400)
+2022/09/09 22:47:08 runtime error: invalid memory address or nil pointer dereference
+2022/09/09 22:47:35 runtime error: invalid memory address or nil pointer dereference
+2022/09/09 23:12:30 telebot: Post "https://api.telegram.org/bot5032378827:AAG8dSJRXHdQt8pRSTEapi5cZV0zG0hoPyc/getUpdates": read tcp 192.168.0.157:53654->149.154.167.220:443: read: connection reset by peer
+2022/09/09 23:13:53 712199933 telebot: context callback is nil
+2022/09/09 23:15:47 712199936 telebot: context pre checkout query is nil
+2022/09/09 23:15:56 runtime error: invalid memory address or nil pointer dereference
+2022/09/09 23:16:02 runtime error: invalid memory address or nil pointer dereference
+2022/09/09 23:16:23 712199942 telegram: Bad Request: message text is empty (400)
+2022/09/09 23:16:26 runtime error: invalid memory address or nil pointer dereference
+2022/09/09 23:16:30 runtime error: invalid memory address or nil pointer dereference
+2022/09/09 23:18:14 712199952 telegram: Bad Request: message text is empty (400)
+2022/09/09 23:18:40 712199955 telegram: Bad Request: message text is empty (400)
+2022/09/09 23:23:50 712199981 telebot: context pre checkout query is nil
+2022/09/09 23:39:16 712199996 telebot: context callback is nil
+2022/09/09 23:39:20 712199997 telebot: context callback is nil
+2022/09/09 23:39:22 712199998 telebot: context callback is nil
+2022/09/09 23:44:58 712200010 telebot: context shipping query is nil
+2022/09/09 23:45:01 712200011 telebot: context shipping query is nil
+2022/09/09 23:45:18 712200014 telebot: context shipping query is nil
+2022/09/09 23:45:20 712200015 telebot: context shipping query is nil
+2022/09/09 23:45:21 712200016 telebot: context shipping query is nil
+2022/09/09 23:45:22 712200017 telebot: context shipping query is nil
+2022/09/09 23:45:22 712200018 telebot: context shipping query is nil
+2022/09/09 23:45:22 712200019 telebot: context shipping query is nil
+2022/09/09 23:45:22 712200020 telebot: context shipping query is nil
+2022/09/09 23:45:22 712200021 telebot: context shipping query is nil
+2022/09/09 23:45:23 712200022 telebot: context shipping query is nil
+2022/09/09 23:45:50 712200024 telebot: context shipping query is nil
+2022/09/09 23:45:52 712200025 telebot: context shipping query is nil
+2022/09/09 23:45:53 712200026 telebot: context shipping query is nil
+2022/09/09 23:45:54 712200027 telebot: context shipping query is nil
+2022/09/09 23:45:55 712200028 telebot: context shipping query is nil
+2022/09/10 16:51:47 712200054 telebot: context does not contain message
+2022/09/10 16:51:49 712200055 telebot: context does not contain message
+2022/09/10 16:55:03 712200059 telebot: context does not contain message
+2022/09/10 17:01:47 telebot: unsupported send-option
+2022/09/10 17:01:48 telebot: unsupported send-option
+2022/09/10 18:47:54 runtime error: invalid memory address or nil pointer dereference
+2022/09/10 18:47:58 runtime error: invalid memory address or nil pointer dereference
+2022/09/10 20:07:49 712200092 telebot: context pre checkout query is nil
+2022/09/10 20:07:52 712200093 telebot: context pre checkout query is nil
+2022/09/10 20:08:17 712200096 telebot: context pre checkout query is nil
+2022/09/10 20:08:19 712200097 telebot: context pre checkout query is nil
+2022/09/10 20:08:21 telebot: unsupported send-option
+2022/09/10 20:08:46 712200100 telebot: context pre checkout query is nil
+2022/09/10 20:08:50 712200102 telebot: context pre checkout query is nil
+2022/09/10 20:10:27 712200104 telebot: context callback is nil
+2022/09/10 20:10:36 712200107 telebot: context callback is nil
+2022/09/10 20:10:39 712200108 telebot: context callback is nil
+2022/09/10 20:11:13 712200110 telebot: context callback is nil
+2022/09/10 20:11:21 712200114 telebot: context callback is nil
