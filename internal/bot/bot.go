@@ -31,7 +31,7 @@ func setCommands() {
 	for _, b := range buttonHandlers {
 		BotInstance.Handle(b.Button(), b.Handle)
 	}
-	// BotInstance.Handle(tele.OnText, handler.OnTextRequest)
+	BotInstance.Handle(tele.OnText, handler.OnTextRequest)
 	// BotInstance.Handle(tele.OnText, func(ctx tele.Context) error {
 	// 	logger.
 	// 		WithField("chat_id", ctx.Chat().ID).

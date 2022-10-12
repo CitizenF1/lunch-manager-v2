@@ -7,6 +7,6 @@ import (
 type Cafe struct {
 	Name         string         `json:"name"`
 	Admin        *tele.User     `json:"admin"`
-	Menu         map[string]int `json:"menu"`
-	CafePassword string         `json:"cafe_password"`
+	TodayMenu    map[string]int `json:"today_menu"`
+	CafePassword string         `json:"admin_password"`
 }

@@ -24,7 +24,7 @@ var (
 	AdminMenu = &telebot.ReplyMarkup{
 		ResizeKeyboard: true,
 		ReplyKeyboard: utils.CreateReplyMarkup(
-			menuButtons,
+			// menuButtons,
 			telebot.Row{AdminBtnUsers, AdminBtnBlogs, AdminBtnUpdate},
 		),
 	}
