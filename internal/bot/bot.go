@@ -24,26 +24,10 @@ func setCommands() {
 		BotInstance.Handle(h.Command(), h.Handle, h.Middleware()...)
 	}
 
-	buttonHandlers := []handler.ButtonHanders{
-		handler.NewAuthButton(BotInstance),
-	}
+	buttonHandlers := []handler.ButtonHanders{}
 
 	for _, b := range buttonHandlers {
 		BotInstance.Handle(b.Button(), b.Handle)
 	}
 	BotInstance.Handle(tele.OnText, handler.OnTextRequest)
-	// BotInstance.Handle(tele.OnText, func(ctx tele.Context) error {
-	// 	logger.
-	// 		WithField("chat_id", ctx.Chat().ID).
-	// 		Printf("[%s] %ds", ctx.Message().OriginalSenderName, ctx.Message().Text)
-
-	// 	for _, handler := range messageHandlers {
-	// 		err := handler.Handle(ctx)
-	// 		if err != nil {
-	// 			return errors.Wrap(err, "failed to handle message")
-	// 		}
-	// 	}
-
-	// 	return nil
-	// })
 }
