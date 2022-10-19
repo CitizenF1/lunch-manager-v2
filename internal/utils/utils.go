@@ -2,8 +2,8 @@ package utils
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"lunch-manager/internal/bot/cafe"
+	"os"
 
 	"gopkg.in/telebot.v3"
 )
@@ -25,11 +25,11 @@ func CreateReplyMarkup(rows ...telebot.Row) [][]telebot.ReplyButton {
 
 func GetAllCafe() ([]cafe.Cafe, error) {
 	cafes := []cafe.Cafe{}
-	b, err := ioutil.ReadFile("./cafe.json")
+	file, err := os.ReadFile("./jsons/cafe.json")
 	if err != nil {
 		return nil, err
 	}
-	err = json.Unmarshal(b, &cafes)
+	err = json.Unmarshal(file, &cafes)
 	if err != nil {
 		return nil, err
 	}

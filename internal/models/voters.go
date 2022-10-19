@@ -1,10 +1,32 @@
 package models
 
+import (
+	"encoding/json"
+	"log"
+	"os"
+)
+
 type Voter struct {
 	UserName string `json:"user_name"`
-	UserID   string `json:"user_id"`
+	UserID   int64  `json:"user_id"`
 }
 
 type Voters struct {
-	Voters []Voter `json:"voters"`
+	User map[int64]string `json:"user"`
+	// Voters []Voter `json:"voters"`
+}
+
+func SetVoterJson() (Voters, error) {
+	file, err := os.ReadFile("./jsons/voters.json")
+	voters := Voters{}
+	if err != nil {
+		log.Println(err)
+		return voters, err
+	}
+	err = json.Unmarshal(file, &voters)
+	if err != nil {
+		log.Println(err)
+		return voters, err
+	}
+	return voters, nil
 }
