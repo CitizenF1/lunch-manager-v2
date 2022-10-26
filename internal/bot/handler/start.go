@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"fmt"
 	"lunch-manager/internal/models"
 
 	tele "gopkg.in/telebot.v3"
@@ -22,14 +21,11 @@ func (s *Start) Description() string {
 }
 
 func (s *Start) Handle(ctx tele.Context) error {
-
-	voters, err := models.SetVoterJson()
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	fmt.Println(voters.User)
-
+	// voters, err := models.SetVoterJson()
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+	// fmt.Println(voters.TotalUser)
 	return ctx.Send("Hello World!", models.Menu)
 }
 

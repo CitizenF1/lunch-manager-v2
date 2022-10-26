@@ -29,18 +29,39 @@ func (s *Menu) Handle(ctx tele.Context) error {
 
 	// scafe.TodayMenu = nil
 	// cafe.BCafe.TodayMenu[payload] = 0
-	fmt.Println(payload)
+	if payload != "" {
+		limit := 254
+		if len(payload) >= limit {
+			cutString := payload[:limit]
+			cafe.BCafe.TodayMenu[cutString] = 0
+			bytes, err := json.Marshal(cafe.BCafe)
+			if err != nil {
+				log.Println(err)
+			}
 
-	bytes, err := json.Marshal(cafe.BCafe)
-	if err != nil {
-		log.Println(err)
+			err = os.WriteFile("./jsons/cafe.json", bytes, 0666)
+			if err != nil {
+				fmt.Println(err)
+			}
+		} else {
+			cafe.BCafe.TodayMenu[payload] = 0
+			bytes, err := json.Marshal(cafe.BCafe)
+			if err != nil {
+				log.Println(err)
+			}
+
+			err = os.WriteFile("./jsons/cafe.json", bytes, 0666)
+			if err != nil {
+				fmt.Println(err)
+			}
+		}
+
+		ctx.Send("Принято")
+	} else {
+		ctx.Send("Введите меню после команды пример: /menu {меню")
 	}
 
-	err = os.WriteFile("./jsons/cafe.json", bytes, 0666)
-	if err != nil {
-		fmt.Println(err)
-	}
-	return ctx.Send("Принято")
+	return nil
 }
 
 func (s *Menu) Middleware() []tele.MiddlewareFunc {

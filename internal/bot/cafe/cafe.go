@@ -29,6 +29,14 @@ func NewCafe() {
 	}
 }
 
+func CreatePoll(question string) *tele.Poll {
+	poll := &tele.Poll{
+		Question: question,
+	}
+	poll.AddOptions("первое+второе+компот", "салат+Второе+компот", "первое+салат+компот", "не буду")
+	return poll
+}
+
 func WriteToJson() {
 
 }

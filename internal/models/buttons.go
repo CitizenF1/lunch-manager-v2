@@ -8,11 +8,10 @@ import (
 
 // ПРИМЕР
 var (
-	BtnAuth        = telebot.Btn{Text: "Авторизация 🚪"}
+	BtnAuth        = telebot.Btn{Text: "Login 🚪"}
 	BtnCafe        = telebot.Btn{Text: "🔔 Subscribe"}
 	BtnUnsubscribe = telebot.Btn{Text: "🔕 Unsubscribe"}
 	AdminBtnUsers  = telebot.Btn{Text: "👤 Users"}
-	AdminBtnBlogs  = telebot.Btn{Text: "📝 Blogs"}
 	AdminBtnUpdate = telebot.Btn{Text: "📣 Update"}
 	menuButtons    = telebot.Row{BtnAuth, BtnCafe, BtnUnsubscribe}
 	Menu           = &telebot.ReplyMarkup{
@@ -25,7 +24,7 @@ var (
 		ResizeKeyboard: true,
 		ReplyKeyboard: utils.CreateReplyMarkup(
 			// menuButtons,
-			telebot.Row{AdminBtnUsers, AdminBtnBlogs, AdminBtnUpdate},
+			telebot.Row{AdminBtnUsers, AdminBtnUpdate},
 		),
 	}
 )
