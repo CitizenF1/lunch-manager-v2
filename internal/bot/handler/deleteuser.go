@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"fmt"
+	log "fmt"
 	"lunch-manager/internal/models"
 
 	tele "gopkg.in/telebot.v3"
@@ -26,7 +26,7 @@ func (s *Delete) Handle(ctx tele.Context) error {
 		payload := ctx.Message().Payload
 		voters, err := models.SetVoterJson()
 		if err != nil {
-			fmt.Println(err)
+			log.Println(err)
 		}
 		for username := range voters.TotalUser {
 			if username == payload {
@@ -36,8 +36,9 @@ func (s *Delete) Handle(ctx tele.Context) error {
 			}
 		}
 		if models.WriteVoters(voters); err != nil {
-			fmt.Println(err)
+			log.Println(err)
 		}
+		ctx.Send("Пользователь удален")
 	} else {
 		ctx.Send("Введите username пользователся которого хотите удалить после команды /delete {UserName}")
 	}

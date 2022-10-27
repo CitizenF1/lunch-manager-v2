@@ -37,6 +37,20 @@ func CreatePoll(question string) *tele.Poll {
 	return poll
 }
 
-func WriteToJson() {
-
+func WriteToJson(user tele.User) error {
+	cafe := Cafe{
+		Name:  "WorkNeat",
+		Admin: &user,
+	}
+	b, err := json.Marshal(&cafe)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+	err = os.WriteFile("./jsons/cafe.json", b, 0666)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+	return nil
 }

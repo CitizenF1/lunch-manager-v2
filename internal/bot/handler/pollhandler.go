@@ -33,16 +33,24 @@ func (s *PollHandler) Handle(ctx tele.Context) error {
 	if Sendet {
 		ctx.Send("Опрос уже создан")
 	} else if ctx.Message().Payload != "" {
-		Poll = cafe.CreatePoll(ctx.Message().Payload)
+		payload := ctx.Message().Payload
+		limit := 254
+		if len(payload) > limit {
+			cutString := payload[:limit]
+			Poll = cafe.CreatePoll(cutString)
+		} else {
+			Poll = cafe.CreatePoll(ctx.Message().Payload)
+		}
 		Sendet = true
-		message, err := Poll.Send(ctx.Bot(), models.BotGroup, nil)
+		Pollmessage, err := Poll.Send(ctx.Bot(), models.BotGroup, nil)
 		if err != nil {
 			log.Println(err)
 		}
-		CurrentPoll = message
+		CurrentPoll = Pollmessage
+
 		ctx.Send("Опрос создан")
 	} else {
-		ctx.Send("Введите payload")
+		ctx.Send("Введите payload /poll {payload}")
 	}
 	// currentPoll, err := poll.Send(ctx.Bot(), models.BotGroup, nil)
 	// if err != nil {
