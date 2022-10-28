@@ -66,6 +66,7 @@ func Timer() {
 
 		if hour == StopPollHour && minute == StopPollMinute && handler.Sendet {
 			StopPoll()
+			handler.Sendet = false
 		}
 		if hour == NotificationHour && minute == NotificationMinute && handler.Sendet {
 			nonVoted := alert.Notification()
