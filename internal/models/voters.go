@@ -20,13 +20,13 @@ type Voters struct {
 
 func UserPollAnswer(ctx tele.Context) error {
 	if ctx.PollAnswer().Sender.Username != "" {
-		err := markVoter(ctx.PollAnswer().Sender.Username, true)
+		err := MarkVoter(ctx.PollAnswer().Sender.Username, true)
 		if err != nil {
 			log.Println(err, "Error markVoter")
 		}
 	}
 	if len(ctx.PollAnswer().Options) == 0 {
-		err := markVoter(ctx.PollAnswer().Sender.Username, false)
+		err := MarkVoter(ctx.PollAnswer().Sender.Username, false)
 		if err != nil {
 			log.Println(err, "Error markVoter")
 		}
@@ -34,7 +34,7 @@ func UserPollAnswer(ctx tele.Context) error {
 	return nil
 }
 
-func markVoter(userName string, votet bool) error {
+func MarkVoter(userName string, votet bool) error {
 	voters, err := SetVoterJson()
 	if err != nil {
 		return err

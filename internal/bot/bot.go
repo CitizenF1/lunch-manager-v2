@@ -50,7 +50,7 @@ func Timer() {
 		if hour == PollSendHour && minute == PollSendMinute && !handler.Sendet {
 			tomorrow := time.Now().Add(time.Hour * 23)
 			if tomorrow.Weekday() != 6 || tomorrow.Weekday() != 0 {
-				poll := cafe.CreatePoll("Обед на:" + tomorrow.Format("02.01") + " Меню: " + tomorrow.Weekday().String())
+				poll := cafe.CreatePoll("Обед на: " + tomorrow.Format("02.01") + " Меню: " + tomorrow.Weekday().String())
 				pollMessage, err := BotInstance.Send(models.BotGroup, poll)
 				if err != nil {
 					log.Println(err)
@@ -129,5 +129,17 @@ func StopPoll() {
 		BotInstance.Send(cafes.Admin, "Результаты: \n"+message)
 	} else {
 		BotInstance.Send(models.BotGroup, "Результаты: \n"+message)
+	}
+
+	voters, err := models.SetVoterJson()
+	if err != nil {
+		log.Println(err)
+	}
+
+	for k := range voters.TotalUser {
+		err := models.MarkVoter(k, false)
+		if err != nil {
+			log.Println(err)
+		}
 	}
 }
