@@ -55,10 +55,10 @@ func Timer() {
 				if err != nil {
 					log.Println(err)
 				}
-				err = BotInstance.Pin(pollMessage)
-				if err != nil {
-					log.Println(err)
-				}
+				// err = BotInstance.Pin(pollMessage)
+				// if err != nil {
+				// 	log.Println(err)
+				// }
 				handler.CurrentPoll = pollMessage
 				handler.Sendet = true
 			}
