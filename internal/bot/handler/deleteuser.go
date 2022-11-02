@@ -28,12 +28,16 @@ func (s *Delete) Handle(ctx tele.Context) error {
 		if err != nil {
 			log.Println(err)
 		}
+		deleteUser := ""
 		for username := range voters.TotalUser {
 			if username == payload {
-				delete(voters.TotalUser, payload)
-			} else {
-				ctx.Send("Пользователь не найден")
+				deleteUser = username
 			}
+		}
+		if deleteUser != "" {
+			delete(voters.TotalUser, deleteUser)
+		} else {
+			ctx.Send("Пользователь не найден")
 		}
 		if models.WriteVoters(voters); err != nil {
 			log.Println(err)
