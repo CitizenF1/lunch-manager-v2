@@ -13,7 +13,7 @@ func Notification() string {
 	}
 	for username, value := range voter.TotalUser {
 		if !value {
-			nonVotet = "@" + username + " "
+			nonVotet += "" + username + " "
 		}
 	}
 	return nonVotet
